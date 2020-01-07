@@ -23,7 +23,7 @@ class _HeaderState extends State<Header> {
               maxLines: 1,
               style: TextStyle(
                   fontSize: mediaQuery.width * 0.08,
-                  color: headerTextColor,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -36,7 +36,7 @@ class _HeaderState extends State<Header> {
             "Você tem ",
             style: TextStyle(color: Colors.grey),
           ),
-          Text("0 tarefas", style: TextStyle(color: headerTextColor)),
+          Text("0 tarefas", style: TextStyle(color: Colors.blue)),
           Text(" para completar", style: TextStyle(color: Colors.grey))
         ],
       )

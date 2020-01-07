@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:todo_app_open_source/components/animation_center.dart';
 import 'package:todo_app_open_source/components/header.dart';
 
 class Home extends StatefulWidget {
@@ -19,11 +20,14 @@ class _HomeState extends State<Home> {
               top: mediaQuery.height * 0.1,
               left: mediaQuery.width * 0.08,
               right: mediaQuery.width * 0.08),
-          child: Column(children: <Widget>[Header()]),
+          child: Column(children: <Widget>[
+            Header(),
+            AnimationCenter(),
+          ]),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: floatingactionbuttonColor,
+        backgroundColor: Colors.blue,
         icon: Icon(Icons.add),
         label: Text("Adicionar nova tarefa"),
         onPressed: () {},

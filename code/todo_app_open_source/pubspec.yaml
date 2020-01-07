@@ -26,6 +26,7 @@ dependencies:
   splashscreen: ^1.2.0
   flutter_launcher_icons: ^0.7.4
   auto_size_text: ^2.1.0
+  flare_flutter: ^1.8.3
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +49,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icon.png
+    - assets/minion.flr
+    - assets/intro.flr
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
