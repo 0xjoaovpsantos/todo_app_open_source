@@ -7,6 +7,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Color floatingactionbuttonColor = Color(0xFF5B2FD3);
   get mediaQuery => MediaQuery.of(context).size;
 
   @override
@@ -21,6 +22,13 @@ class _HomeState extends State<Home> {
           child: Column(children: <Widget>[Header()]),
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: floatingactionbuttonColor,
+        icon: Icon(Icons.add),
+        label: Text("Adicionar nova tarefa"),
+        onPressed: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
