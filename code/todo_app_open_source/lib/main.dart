@@ -1,23 +1,25 @@
 import "package:flutter/material.dart";
 import 'package:splashscreen/splashscreen.dart';
 
+import 'pages/home.dart';
+
 void main() {
-  runApp(MaterialApp(home: Home()));
+  runApp(MaterialApp(home: Main()));
 }
 
-class Home extends StatefulWidget {
+class Main extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _MainState createState() => _MainState();
 }
 
-class _HomeState extends State<Home> {
+class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
         SplashScreen(
             seconds: 3,
-            navigateAfterSeconds: Container(),
+            navigateAfterSeconds: Home(),
             backgroundColor: Colors.white,
             styleTextUnderTheLoader: TextStyle(),
             photoSize: 100.0,
