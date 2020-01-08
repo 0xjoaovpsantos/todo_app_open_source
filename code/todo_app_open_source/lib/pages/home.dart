@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:todo_app_open_source/components/animation_center.dart';
 import 'package:todo_app_open_source/components/header.dart';
+import 'package:todo_app_open_source/pages/my_task.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -30,7 +31,10 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.blue,
         icon: Icon(Icons.add),
         label: Text("Adicionar nova tarefa"),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MyTask()));
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

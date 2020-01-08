@@ -19,7 +19,7 @@ class _HeaderState extends State<Header> {
         children: <Widget>[
           Expanded(
             child: AutoSizeText(
-              "Eae meu jovem!",
+              "Eae jovem!",
               maxLines: 1,
               style: TextStyle(
                   fontSize: mediaQuery.width * 0.08,
