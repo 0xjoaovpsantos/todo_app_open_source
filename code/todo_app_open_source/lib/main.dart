@@ -1,10 +1,14 @@
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:todo_app_open_source/controller/controller.dart';
 
 import 'pages/home.dart';
 
 void main() {
-  runApp(MaterialApp(home: Main()));
+  runApp(MultiProvider(
+      providers: [Provider<Controller>(create: (_) => Controller())],
+      child: MaterialApp(home: Main())));
 }
 
 class Main extends StatefulWidget {

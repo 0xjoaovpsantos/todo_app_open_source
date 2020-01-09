@@ -1,4 +1,7 @@
 import "package:flutter/material.dart";
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app_open_source/controller/controller.dart';
 import 'package:todo_app_open_source/pages/home.dart';
 
 class MyTask extends StatefulWidget {
@@ -7,10 +10,13 @@ class MyTask extends StatefulWidget {
 }
 
 class _MyTaskState extends State<MyTask> {
+  TextEditingController textArea = TextEditingController();
   get mediaQuery => MediaQuery.of(context).size;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<Controller>(context);
+
     return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -56,6 +62,10 @@ class _MyTaskState extends State<MyTask> {
                     Container(
                       margin: EdgeInsets.only(top: mediaQuery.height * 0.04),
                       child: TextField(
+                        controller: textArea,
+                        onChanged: (text) {
+                          controller.updateNumberCharacters(text);
+                        },
                         maxLines: null,
                         keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
@@ -71,9 +81,13 @@ class _MyTaskState extends State<MyTask> {
                     ),
                     Container(
                       margin: EdgeInsets.only(top: mediaQuery.height * 0.04),
-                      child: Text(
-                        "0 Caracteres",
-                        style: TextStyle(color: Colors.grey),
+                      child: Observer(
+                        builder: (_) {
+                          return Text(
+                            "${controller.numberCharacters} Caracteres",
+                            style: TextStyle(color: Colors.grey),
+                          );
+                        },
                       ),
                     )
                   ],

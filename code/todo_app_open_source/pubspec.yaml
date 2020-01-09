@@ -29,10 +29,13 @@ dependencies:
   flare_flutter: ^1.8.3
   mobx: ^0.4.0+1
   flutter_mobx: ^0.3.6
+  provider: ^4.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mobx_codegen: ^0.4.0+1
+  build_runner: ^1.7.3
 
 flutter_icons:
   android: "launcher_icon"

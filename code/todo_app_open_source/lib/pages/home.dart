@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 import 'package:todo_app_open_source/components/animation_center.dart';
 import 'package:todo_app_open_source/components/header.dart';
+import 'package:todo_app_open_source/controller/controller.dart';
 import 'package:todo_app_open_source/pages/my_task.dart';
 
 class Home extends StatefulWidget {
@@ -14,6 +16,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<Controller>(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -32,6 +36,7 @@ class _HomeState extends State<Home> {
         icon: Icon(Icons.add),
         label: Text("Adicionar nova tarefa"),
         onPressed: () {
+          controller.initNumberCharacters();
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => MyTask()));
         },
