@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:provider/provider.dart';
+import 'package:get_it/get_it.dart';
 import 'package:todo_app_open_source/controller/controller.dart';
 import 'package:todo_app_open_source/pages/home.dart';
 
@@ -15,7 +15,7 @@ class _MyTaskState extends State<MyTask> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<Controller>(context);
+    final controller = GetIt.I.get<Controller>();
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -35,6 +35,7 @@ class _MyTaskState extends State<MyTask> {
                               color: Colors.blue,
                               size: mediaQuery.width * 0.08),
                           onTap: () {
+                            controller.storeTask();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

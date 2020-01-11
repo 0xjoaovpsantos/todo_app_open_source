@@ -1,14 +1,14 @@
 import "package:flutter/material.dart";
-import 'package:provider/provider.dart';
+import 'package:get_it/get_it.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:todo_app_open_source/controller/controller.dart';
 
 import 'pages/home.dart';
 
 void main() {
-  runApp(MultiProvider(
-      providers: [Provider<Controller>(create: (_) => Controller())],
-      child: MaterialApp(home: Main())));
+  GetIt getIt = GetIt.I;
+  getIt.registerSingleton<Controller>(Controller());
+  runApp(MaterialApp(home: Main()));
 }
 
 class Main extends StatefulWidget {
