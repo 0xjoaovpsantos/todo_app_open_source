@@ -26,11 +26,15 @@ class _MainState extends State<Main> {
             navigateAfterSeconds: Home(),
             backgroundColor: Colors.white,
             styleTextUnderTheLoader: TextStyle(),
-            photoSize: 100.0,
+            photoSize: 50.0,
             loaderColor: Colors.white),
-        Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/icon.png'))),
+        Center(
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.2,
+            width: MediaQuery.of(context).size.width * 0.4,
+            decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/icon.png'))),
+          ),
         )
       ],
     );

@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="todo_app_open_source"
+        android:label="ToDo App Open Source"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
