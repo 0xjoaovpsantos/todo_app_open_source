@@ -31,6 +31,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final controller = GetIt.I.get<Controller>();
+    if (controller.task != "") {
+      controller.storeTask();
+    }
     //print("build home.dart");
     return Observer(builder: (context) {
       return Scaffold(
