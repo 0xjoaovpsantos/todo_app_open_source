@@ -35,7 +35,9 @@ class _MyTaskState extends State<MyTask> {
                               color: controller.secondColorApp,
                               size: mediaQuery.width * 0.08),
                           onTap: () {
-                            controller.storeTask();
+                            if (controller.task.trim() != "") {
+                              controller.storeTask();
+                            }
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

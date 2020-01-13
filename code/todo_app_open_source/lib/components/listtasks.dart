@@ -16,30 +16,8 @@ class _ListTasksState extends State<ListTasks> {
       child: Wrap(
         children: controller.myTasks.map((value) {
           return GestureDetector(
-            onDoubleTap: () {
-              showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: Text("Deseja excluir essa tarefa?"),
-                      content: Text(value),
-                      actions: <Widget>[
-                        FlatButton(
-                            child: Text("Não"),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            }),
-                        FlatButton(
-                            child: Text("Sim"),
-                            onPressed: () {
-                              controller.deleteTask(value);
-                              Navigator.pop(context);
-                            })
-                      ],
-                    );
-                  });
-            },
-            onLongPress: () {},
+            onDoubleTap: () => showMessage(context, value),
+            onLongPress: () => showMessage(context, value),
             child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0)),
@@ -60,5 +38,29 @@ class _ListTasksState extends State<ListTasks> {
         }).toList(),
       ),
     );
+  }
+
+  showMessage(context, value) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Deseja excluir essa tarefa?"),
+            content: Text(value),
+            actions: <Widget>[
+              FlatButton(
+                  child: Text("Não"),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              FlatButton(
+                  child: Text("Sim"),
+                  onPressed: () {
+                    controller.deleteTask(value);
+                    Navigator.pop(context);
+                  })
+            ],
+          );
+        });
   }
 }
