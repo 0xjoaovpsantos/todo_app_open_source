@@ -10,13 +10,17 @@ class MyTask extends StatefulWidget {
 }
 
 class _MyTaskState extends State<MyTask> {
+  final controller = GetIt.I.get<Controller>();
   TextEditingController textArea = TextEditingController();
   get mediaQuery => MediaQuery.of(context).size;
 
   @override
-  Widget build(BuildContext context) {
-    final controller = GetIt.I.get<Controller>();
+  void dispose() {
+    controller.storeTask();
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: controller.primaryColorApp,
         body: SingleChildScrollView(
@@ -35,9 +39,8 @@ class _MyTaskState extends State<MyTask> {
                               color: controller.secondColorApp,
                               size: mediaQuery.width * 0.08),
                           onTap: () {
-                            if (controller.task.trim() != "") {
-                              controller.storeTask();
-                            }
+                            controller.storeTask();
+
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

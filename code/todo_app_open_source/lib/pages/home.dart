@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mobx/mobx.dart';
 import 'package:todo_app_open_source/components/animation_center.dart';
 import 'package:todo_app_open_source/components/header.dart';
 import 'package:todo_app_open_source/components/listtasks.dart';
@@ -14,7 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Color floatingactionbuttonColor = Color(0xFF5B2FD3);
+  final controller = GetIt.I.get<Controller>();
   get mediaQuery => MediaQuery.of(context).size;
 
   void initState() {
@@ -30,11 +29,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = GetIt.I.get<Controller>();
-    if (controller.task != "") {
-      controller.storeTask();
-    }
-    //print("build home.dart");
     return Observer(builder: (context) {
       return Scaffold(
         backgroundColor: controller.primaryColorApp,
