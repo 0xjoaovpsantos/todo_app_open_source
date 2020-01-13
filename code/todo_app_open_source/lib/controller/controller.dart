@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 part 'controller.g.dart';
@@ -16,6 +17,38 @@ abstract class ControllerBase with Store {
 
   @observable
   bool screenLoad = false;
+
+  @observable
+  bool clearMode = true;
+
+  @observable
+  dynamic primaryColorApp = Colors.white;
+
+  @observable
+  dynamic secondColorApp = Colors.blue;
+
+  @observable
+  dynamic textColor = Colors.black;
+
+  @observable
+  String animation = "minion";
+
+  @action
+  updateThemeApp(bool value) {
+    clearMode = value;
+
+    if (clearMode) {
+      primaryColorApp = Colors.white;
+      secondColorApp = Colors.blue;
+      textColor = Colors.black;
+      animation = "minion";
+    } else {
+      primaryColorApp = Colors.black;
+      secondColorApp = Colors.white;
+      textColor = Colors.white;
+      animation = "intro";
+    }
+  }
 
   @action
   updateNumberCharacters(String text) {

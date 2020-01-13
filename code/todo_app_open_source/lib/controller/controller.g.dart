@@ -77,6 +77,91 @@ mixin _$Controller on ControllerBase, Store {
     }, _$screenLoadAtom, name: '${_$screenLoadAtom.name}_set');
   }
 
+  final _$clearModeAtom = Atom(name: 'ControllerBase.clearMode');
+
+  @override
+  bool get clearMode {
+    _$clearModeAtom.context.enforceReadPolicy(_$clearModeAtom);
+    _$clearModeAtom.reportObserved();
+    return super.clearMode;
+  }
+
+  @override
+  set clearMode(bool value) {
+    _$clearModeAtom.context.conditionallyRunInAction(() {
+      super.clearMode = value;
+      _$clearModeAtom.reportChanged();
+    }, _$clearModeAtom, name: '${_$clearModeAtom.name}_set');
+  }
+
+  final _$primaryColorAppAtom = Atom(name: 'ControllerBase.primaryColorApp');
+
+  @override
+  dynamic get primaryColorApp {
+    _$primaryColorAppAtom.context.enforceReadPolicy(_$primaryColorAppAtom);
+    _$primaryColorAppAtom.reportObserved();
+    return super.primaryColorApp;
+  }
+
+  @override
+  set primaryColorApp(dynamic value) {
+    _$primaryColorAppAtom.context.conditionallyRunInAction(() {
+      super.primaryColorApp = value;
+      _$primaryColorAppAtom.reportChanged();
+    }, _$primaryColorAppAtom, name: '${_$primaryColorAppAtom.name}_set');
+  }
+
+  final _$secondColorAppAtom = Atom(name: 'ControllerBase.secondColorApp');
+
+  @override
+  dynamic get secondColorApp {
+    _$secondColorAppAtom.context.enforceReadPolicy(_$secondColorAppAtom);
+    _$secondColorAppAtom.reportObserved();
+    return super.secondColorApp;
+  }
+
+  @override
+  set secondColorApp(dynamic value) {
+    _$secondColorAppAtom.context.conditionallyRunInAction(() {
+      super.secondColorApp = value;
+      _$secondColorAppAtom.reportChanged();
+    }, _$secondColorAppAtom, name: '${_$secondColorAppAtom.name}_set');
+  }
+
+  final _$textColorAtom = Atom(name: 'ControllerBase.textColor');
+
+  @override
+  dynamic get textColor {
+    _$textColorAtom.context.enforceReadPolicy(_$textColorAtom);
+    _$textColorAtom.reportObserved();
+    return super.textColor;
+  }
+
+  @override
+  set textColor(dynamic value) {
+    _$textColorAtom.context.conditionallyRunInAction(() {
+      super.textColor = value;
+      _$textColorAtom.reportChanged();
+    }, _$textColorAtom, name: '${_$textColorAtom.name}_set');
+  }
+
+  final _$animationAtom = Atom(name: 'ControllerBase.animation');
+
+  @override
+  String get animation {
+    _$animationAtom.context.enforceReadPolicy(_$animationAtom);
+    _$animationAtom.reportObserved();
+    return super.animation;
+  }
+
+  @override
+  set animation(String value) {
+    _$animationAtom.context.conditionallyRunInAction(() {
+      super.animation = value;
+      _$animationAtom.reportChanged();
+    }, _$animationAtom, name: '${_$animationAtom.name}_set');
+  }
+
   final _$storeTaskAsyncAction = AsyncAction('storeTask');
 
   @override
@@ -100,6 +185,16 @@ mixin _$Controller on ControllerBase, Store {
 
   final _$ControllerBaseActionController =
       ActionController(name: 'ControllerBase');
+
+  @override
+  dynamic updateThemeApp(bool value) {
+    final _$actionInfo = _$ControllerBaseActionController.startAction();
+    try {
+      return super.updateThemeApp(value);
+    } finally {
+      _$ControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   dynamic updateNumberCharacters(String text) {

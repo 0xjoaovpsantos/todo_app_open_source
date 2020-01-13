@@ -18,7 +18,7 @@ class _MyTaskState extends State<MyTask> {
     final controller = GetIt.I.get<Controller>();
 
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: controller.primaryColorApp,
         body: SingleChildScrollView(
             child: Container(
                 margin: EdgeInsets.only(
@@ -32,7 +32,7 @@ class _MyTaskState extends State<MyTask> {
                       children: <Widget>[
                         GestureDetector(
                           child: Icon(Icons.keyboard_backspace,
-                              color: Colors.blue,
+                              color: controller.secondColorApp,
                               size: mediaQuery.width * 0.08),
                           onTap: () {
                             controller.storeTask();
@@ -44,12 +44,12 @@ class _MyTaskState extends State<MyTask> {
                         ),
                         Text("Minha tarefa",
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: controller.secondColorApp,
                                 fontSize: mediaQuery.width * 0.08,
                                 fontWeight: FontWeight.bold)),
                         GestureDetector(
                           child: Icon(Icons.close,
-                              color: Colors.blue,
+                              color: controller.secondColorApp,
                               size: mediaQuery.width * 0.08),
                           onTap: () {
                             Navigator.push(
@@ -63,6 +63,7 @@ class _MyTaskState extends State<MyTask> {
                     Container(
                       margin: EdgeInsets.only(top: mediaQuery.height * 0.04),
                       child: TextField(
+                        style: TextStyle(color: controller.textColor),
                         controller: textArea,
                         onChanged: (text) {
                           controller.updateNumberCharacters(text);

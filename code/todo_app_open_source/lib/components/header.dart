@@ -17,39 +17,45 @@ class _HeaderState extends State<Header> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Expanded(
-            child: AutoSizeText(
-              "Eae jovem!",
-              maxLines: 1,
-              style: TextStyle(
-                  fontSize: mediaQuery.width * 0.08,
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold),
-            ),
+    return Observer(
+      builder: (context) {
+        return Column(children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Expanded(
+                child: AutoSizeText(
+                  "Eae jovem!",
+                  maxLines: 1,
+                  style: TextStyle(
+                      fontSize: mediaQuery.width * 0.08,
+                      color: controller.secondColorApp,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Switch(
+                  onChanged: (value) {
+                    controller.updateThemeApp(value);
+                  },
+                  value: controller.clearMode)
+            ],
           ),
-          Icon(Icons.more_horiz)
-        ],
-      ),
-      Row(
-        children: <Widget>[
-          Text(
-            "Você tem ",
-            style: TextStyle(color: Colors.grey),
-          ),
-          Observer(builder: (context) {
-            return Text(
-                controller.myTasks.length == 1
-                    ? "${controller.myTasks.length} tarefa"
-                    : "${controller.myTasks.length} tarefas",
-                style: TextStyle(color: Colors.blue));
-          }),
-          Text(" para completar", style: TextStyle(color: Colors.grey))
-        ],
-      )
-    ]);
+          Row(
+            children: <Widget>[
+              Text(
+                "Você tem ",
+                style: TextStyle(color: Colors.grey),
+              ),
+              Text(
+                  controller.myTasks.length == 1
+                      ? "${controller.myTasks.length} tarefa"
+                      : "${controller.myTasks.length} tarefas",
+                  style: TextStyle(color: controller.secondColorApp)),
+              Text(" para completar", style: TextStyle(color: Colors.grey))
+            ],
+          )
+        ]);
+      },
+    );
   }
 }

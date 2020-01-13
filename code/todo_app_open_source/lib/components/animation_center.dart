@@ -1,5 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import "package:flutter/material.dart";
+import 'package:get_it/get_it.dart';
+import 'package:todo_app_open_source/controller/controller.dart';
 
 class AnimationCenter extends StatefulWidget {
   @override
@@ -7,6 +9,7 @@ class AnimationCenter extends StatefulWidget {
 }
 
 class _AnimationCenterState extends State<AnimationCenter> {
+  final controller = GetIt.I.get<Controller>();
   get mediaQuery => MediaQuery.of(context).size;
 
   @override
@@ -17,9 +20,11 @@ class _AnimationCenterState extends State<AnimationCenter> {
           children: <Widget>[
             Container(
               width: mediaQuery.width,
-              height: mediaQuery.height * 0.34,
+              height: controller.animation == "minion"
+                  ? mediaQuery.height * 0.34
+                  : mediaQuery.height * 0.38,
               child: FlareActor(
-                "assets/minion.flr",
+                "assets/" + controller.animation + ".flr",
                 alignment: Alignment.center,
                 shouldClip: false,
                 fit: BoxFit.contain,
@@ -27,7 +32,9 @@ class _AnimationCenterState extends State<AnimationCenter> {
               ),
             ),
             Positioned(
-              top: mediaQuery.height * 0.28,
+              top: controller.animation == "minion"
+                  ? mediaQuery.height * 0.28
+                  : mediaQuery.height * 0.32,
               left: mediaQuery.width * 0.21,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -36,12 +43,14 @@ class _AnimationCenterState extends State<AnimationCenter> {
                   Text(
                     "Esse app é open source",
                     style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
+                        color: controller.secondColorApp,
+                        fontWeight: FontWeight.bold),
                   ),
                   Text(
                     "Contribua você também",
                     style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
+                        color: controller.secondColorApp,
+                        fontWeight: FontWeight.bold),
                   )
                 ],
               ),

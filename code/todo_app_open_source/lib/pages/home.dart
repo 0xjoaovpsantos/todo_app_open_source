@@ -32,43 +32,46 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final controller = GetIt.I.get<Controller>();
     //print("build home.dart");
-    return Scaffold(
-      body: controller.screenLoad
-          ? Center(
-              child: Container(
-                margin: EdgeInsets.all(8.0),
-                child: CircularProgressIndicator(),
+    return Observer(builder: (context) {
+      return Scaffold(
+        backgroundColor: controller.primaryColorApp,
+        body: controller.screenLoad
+            ? Center(
+                child: Container(
+                  margin: EdgeInsets.all(8.0),
+                  child: CircularProgressIndicator(),
+                ),
+              )
+            : SingleChildScrollView(
+                child: Container(
+                  margin: EdgeInsets.only(
+                      top: mediaQuery.height * 0.1,
+                      left: mediaQuery.width * 0.08,
+                      right: mediaQuery.width * 0.08),
+                  child: Column(children: <Widget>[
+                    Header(),
+                    controller.myTasks.length == 0
+                        ? AnimationCenter()
+                        : ListTasks(),
+                  ]),
+                ),
               ),
-            )
-          : Observer(
-              builder: (context) {
-                return SingleChildScrollView(
-                  child: Container(
-                    margin: EdgeInsets.only(
-                        top: mediaQuery.height * 0.1,
-                        left: mediaQuery.width * 0.08,
-                        right: mediaQuery.width * 0.08),
-                    child: Column(children: <Widget>[
-                      Header(),
-                      controller.myTasks.length == 0
-                          ? AnimationCenter()
-                          : ListTasks(),
-                    ]),
-                  ),
-                );
-              },
-            ),
-      floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Colors.blue,
-        icon: Icon(Icons.add),
-        label: Text("Adicionar nova tarefa"),
-        onPressed: () {
-          controller.initNumberCharacters();
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => MyTask()));
-        },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    );
+        floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: controller.secondColorApp,
+          icon: Icon(
+            Icons.add,
+            color: controller.primaryColorApp,
+          ),
+          label: Text("Adicionar nova tarefa",
+              style: TextStyle(color: controller.primaryColorApp)),
+          onPressed: () {
+            controller.initNumberCharacters();
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MyTask()));
+          },
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      );
+    });
   }
 }
