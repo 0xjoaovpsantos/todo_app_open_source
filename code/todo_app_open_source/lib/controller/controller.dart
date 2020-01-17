@@ -68,11 +68,13 @@ abstract class ControllerBase with Store {
 
   @action
   storeTask() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    myTasks = await prefs.getStringList("myTasks") ?? [];
-    myTasks = List.from(myTasks..add(task));
-    task = "";
-    prefs.setStringList("myTasks", myTasks);
+    if (task.trim() != "") {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      myTasks = await prefs.getStringList("myTasks") ?? [];
+      myTasks = List.from(myTasks..add(task));
+      task = "";
+      prefs.setStringList("myTasks", myTasks);
+    }
   }
 
   @action
