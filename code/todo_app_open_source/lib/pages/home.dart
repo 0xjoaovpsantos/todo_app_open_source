@@ -16,6 +16,7 @@ class _HomeState extends State<Home> {
   final controller = GetIt.I.get<Controller>();
   get mediaQuery => MediaQuery.of(context).size;
 
+  @override
   void initState() {
     final controller = GetIt.I.get<Controller>();
 
@@ -25,6 +26,7 @@ class _HomeState extends State<Home> {
         controller.updateScreenLoad(false);
       });
     });
+    super.initState();
   }
 
   @override

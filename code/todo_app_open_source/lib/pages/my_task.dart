@@ -2,7 +2,6 @@ import "package:flutter/material.dart";
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:todo_app_open_source/controller/controller.dart';
-import 'package:todo_app_open_source/pages/home.dart';
 
 class MyTask extends StatefulWidget {
   @override
@@ -12,12 +11,8 @@ class MyTask extends StatefulWidget {
 class _MyTaskState extends State<MyTask> {
   final controller = GetIt.I.get<Controller>();
   TextEditingController textArea = TextEditingController();
-  get mediaQuery => MediaQuery.of(context).size;
 
-  @override
-  void dispose() {
-    controller.storeTask();
-  }
+  get mediaQuery => MediaQuery.of(context).size;
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +33,9 @@ class _MyTaskState extends State<MyTask> {
                           child: Icon(Icons.keyboard_backspace,
                               color: controller.secondColorApp,
                               size: mediaQuery.width * 0.08),
-                          onTap: () {
-                            controller.storeTask();
-
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home()));
+                          onTap: () async {
+                            await controller.storeTask();
+                            Navigator.pop(context);
                           },
                         ),
                         Text("Minha tarefa",
@@ -56,12 +47,7 @@ class _MyTaskState extends State<MyTask> {
                           child: Icon(Icons.close,
                               color: controller.secondColorApp,
                               size: mediaQuery.width * 0.08),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home()));
-                          },
+                          onTap: () => Navigator.pop(context),
                         )
                       ],
                     ),
