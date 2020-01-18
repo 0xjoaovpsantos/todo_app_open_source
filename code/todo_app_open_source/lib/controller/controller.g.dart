@@ -165,21 +165,21 @@ mixin _$Controller on ControllerBase, Store {
   final _$storeTaskAsyncAction = AsyncAction('storeTask');
 
   @override
-  Future storeTask() {
+  Future<void> storeTask() {
     return _$storeTaskAsyncAction.run(() => super.storeTask());
   }
 
   final _$searchTaskAsyncAction = AsyncAction('searchTask');
 
   @override
-  Future<bool> searchTask() {
+  Future<void> searchTask() {
     return _$searchTaskAsyncAction.run(() => super.searchTask());
   }
 
   final _$deleteTaskAsyncAction = AsyncAction('deleteTask');
 
   @override
-  Future deleteTask(String value) {
+  Future<void> deleteTask(String value) {
     return _$deleteTaskAsyncAction.run(() => super.deleteTask(value));
   }
 
@@ -187,7 +187,7 @@ mixin _$Controller on ControllerBase, Store {
       ActionController(name: 'ControllerBase');
 
   @override
-  dynamic updateThemeApp(bool value) {
+  void updateThemeApp(bool value) {
     final _$actionInfo = _$ControllerBaseActionController.startAction();
     try {
       return super.updateThemeApp(value);
@@ -197,7 +197,7 @@ mixin _$Controller on ControllerBase, Store {
   }
 
   @override
-  dynamic updateNumberCharacters(String text) {
+  void updateNumberCharacters(String text) {
     final _$actionInfo = _$ControllerBaseActionController.startAction();
     try {
       return super.updateNumberCharacters(text);
@@ -207,7 +207,7 @@ mixin _$Controller on ControllerBase, Store {
   }
 
   @override
-  dynamic initNumberCharacters() {
+  void initNumberCharacters() {
     final _$actionInfo = _$ControllerBaseActionController.startAction();
     try {
       return super.initNumberCharacters();
@@ -217,7 +217,7 @@ mixin _$Controller on ControllerBase, Store {
   }
 
   @override
-  dynamic changeTextTask(String newTask) {
+  void changeTextTask(String newTask) {
     final _$actionInfo = _$ControllerBaseActionController.startAction();
     try {
       return super.changeTextTask(newTask);
@@ -227,7 +227,7 @@ mixin _$Controller on ControllerBase, Store {
   }
 
   @override
-  dynamic updateScreenLoad(bool state) {
+  void updateScreenLoad(bool state) {
     final _$actionInfo = _$ControllerBaseActionController.startAction();
     try {
       return super.updateScreenLoad(state);
@@ -237,7 +237,7 @@ mixin _$Controller on ControllerBase, Store {
   }
 
   @override
-  dynamic updateListMyTasks(List<String> tasks) {
+  void updateListMyTasks(List<String> tasks) {
     final _$actionInfo = _$ControllerBaseActionController.startAction();
     try {
       return super.updateListMyTasks(tasks);

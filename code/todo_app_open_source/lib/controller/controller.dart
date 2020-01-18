@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 part 'controller.g.dart';
 
 class Controller = ControllerBase with _$Controller;
@@ -34,7 +35,7 @@ abstract class ControllerBase with Store {
   String animation = "minion";
 
   @action
-  updateThemeApp(bool value) {
+  void updateThemeApp(bool value) {
     clearMode = value;
 
     if (clearMode) {
@@ -51,26 +52,22 @@ abstract class ControllerBase with Store {
   }
 
   @action
-  updateNumberCharacters(String text) {
+  void updateNumberCharacters(String text) {
     numberCharacters = text.length;
     changeTextTask(text);
   }
 
   @action
-  initNumberCharacters() {
-    numberCharacters = 0;
-  }
+  void initNumberCharacters() => numberCharacters = 0;
 
   @action
-  changeTextTask(String newTask) {
-    task = newTask;
-  }
+  void changeTextTask(String newTask) => task = newTask;
 
   @action
-  storeTask() async {
-    if (task.trim() != "") {
+  Future<void> storeTask() async {
+    if (task.trim().isNotEmpty) {
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      myTasks = await prefs.getStringList("myTasks") ?? [];
+      myTasks = prefs.getStringList("myTasks") ?? [];
       myTasks = List.from(myTasks..add(task));
       task = "";
       prefs.setStringList("myTasks", myTasks);
@@ -78,25 +75,20 @@ abstract class ControllerBase with Store {
   }
 
   @action
-  Future<bool> searchTask() async {
+  Future<void> searchTask() async {
     updateScreenLoad(true);
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    myTasks = await prefs.getStringList("myTasks") ?? [];
+    myTasks = prefs.getStringList("myTasks") ?? [];
   }
 
   @action
-  updateScreenLoad(bool state) {
-    screenLoad = state;
-  }
+  void updateScreenLoad(bool state) => screenLoad = state;
 
   @action
-  updateListMyTasks(List<String> tasks) {
-    myTasks = tasks;
-  }
+  void updateListMyTasks(List<String> tasks) => myTasks = tasks;
 
   @action
-  deleteTask(String value) async {
-    //myTasks.remove(value);
+  Future<void> deleteTask(String value) async {
     myTasks = List.from(myTasks..remove(value));
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setStringList("myTasks", myTasks);
