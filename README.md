@@ -1,21 +1,15 @@
 # ToDo App Open Source
 
-[![Play Store Button](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png "Google Play Button")](https://play.google.com/store/apps/details?id=com.santos.pereira.victor.joao.todo_app_open_source)
+> O aplicativo para que você possa organizar suas tarefas, com o código fonte aberto para qualquer desenvolvedor contribuir e aprender com o projeto!
+
+[![Play Store Button](screenshots/1.0.0/google-play-icon.jpg "Google Play Button")](https://play.google.com/store/apps/details?id=com.santos.pereira.victor.joao.todo_app_open_source)
 
 ## Screenshots
 
 <p align="center">
-  <img src="https://raw.github.com/joaovictorpsantos/todo_app_open_source/master/screenshots/1.0.0/Screenshot_20200113-193853.png" width="280">
+  <img src="screenshots/1.0.0/01.png">
 
-<img src="https://raw.github.com/joaovictorpsantos/todo_app_open_source/master/screenshots/1.0.0/Screenshot_20200113-193918.png" width="280">
-
-<img src="https://raw.github.com/joaovictorpsantos/todo_app_open_source/master/screenshots/1.0.0/Screenshot_20200113-193935.png" width="280">
-
-<img src="https://raw.github.com/joaovictorpsantos/todo_app_open_source/master/screenshots/1.0.0/Screenshot_20200113-194035.png" width="280">
-
-<img src="https://raw.github.com/joaovictorpsantos/todo_app_open_source/master/screenshots/1.0.0/Screenshot_20200117-100308.png" width="280">
-
-<img src="https://raw.github.com/joaovictorpsantos/todo_app_open_source/master/screenshots/1.0.0/Screenshot_20200117-100320.png" width="280">
+  <img src="screenshots/1.0.0/02.png">
 </p>
 
 ## Flutter
