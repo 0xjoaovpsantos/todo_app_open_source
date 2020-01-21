@@ -40,11 +40,7 @@ class _MyTaskState extends State<MyTask> {
                               size: mediaQuery.width * 0.08),
                           onTap: () {
                             controller.storeTask();
-
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home()));
+                            Navigator.pop(context);
                           },
                         ),
                         Text("Minha tarefa",
@@ -57,10 +53,7 @@ class _MyTaskState extends State<MyTask> {
                               color: controller.secondColorApp,
                               size: mediaQuery.width * 0.08),
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Home()));
+                            Navigator.pop(context);
                           },
                         )
                       ],
