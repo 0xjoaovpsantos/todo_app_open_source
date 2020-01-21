@@ -2,7 +2,7 @@
 
 > O aplicativo para que você possa organizar suas tarefas, com o código fonte aberto para qualquer desenvolvedor contribuir e aprender com o projeto!
 
-[![Play Store Button](https://embed.widencdn.net/img/visitorlando/79bjkrhrpc/150x150px/google-play.jpeg?c=false&color=fffff&position=c&quality=60&u=sjlvfm "Google Play Button")](https://play.google.com/store/apps/details?id=com.santos.pereira.victor.joao.todo_app_open_source)
+[![Play Store Button](screenshots/1.0.0/google-play-icon.jpg "Google Play Button")](https://play.google.com/store/apps/details?id=com.santos.pereira.victor.joao.todo_app_open_source)
 
 ## Screenshots
 
