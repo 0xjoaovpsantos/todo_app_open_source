@@ -19,6 +19,11 @@ class _MyTaskState extends State<MyTask> {
     controller.storeTask();
   }
 
+  bool darkMode(color) {
+    if(color == Colors.black ) return true;
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,14 +81,18 @@ class _MyTaskState extends State<MyTask> {
                         maxLines: null,
                         keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
-                            hintText: "Escreve ai sem pressa!",
+                            //hintText: "Escreve ai sem pressa!",
+                            labelText: "Escreve aí sem pressa!!",
+                            labelStyle: TextStyle(
+                              color: darkMode(controller.primaryColorApp) ? Colors.white : Colors.blue
+                            ),
                             hintStyle: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.bold),
                             enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
+                                borderSide: BorderSide(color: darkMode(controller.primaryColorApp) ? Colors.white : Colors.blue)),
                             focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white))),
+                                borderSide: BorderSide(color: darkMode(controller.primaryColorApp) ? Colors.white : Colors.blue))),
                       ),
                     ),
                     Container(
