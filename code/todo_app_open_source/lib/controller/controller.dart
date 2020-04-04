@@ -34,6 +34,12 @@ abstract class ControllerBase with Store {
   String animation = "minion";
 
   @action
+  bool darkMode(color) {
+    if(color == Colors.black ) return true;
+    return false;
+  }
+
+  @action
   updateThemeApp(bool value) {
     clearMode = value;
 
@@ -101,4 +107,5 @@ abstract class ControllerBase with Store {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setStringList("myTasks", myTasks);
   }
+
 }
