@@ -78,15 +78,15 @@ class _MyTaskState extends State<MyTask> {
                         decoration: InputDecoration(
                             labelText: "Escreve aí sem pressa!!",
                             labelStyle: TextStyle(
-                              color: controller.darkMode(controller.primaryColorApp) ? Colors.white : Colors.blue
+                              color: controller.labelBorderColor
                             ),
                             hintStyle: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.bold),
                             enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: controller.darkMode(controller.primaryColorApp) ? Colors.white : Colors.blue)),
+                                borderSide: BorderSide(color: controller.labelBorderColor)),
                             focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: controller.darkMode(controller.primaryColorApp) ? Colors.white : Colors.blue))),
+                                borderSide: BorderSide(color: controller.labelBorderColor))),
                       ),
                     ),
                     Container(

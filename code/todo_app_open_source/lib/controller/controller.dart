@@ -31,13 +31,10 @@ abstract class ControllerBase with Store {
   dynamic textColor = Colors.black;
 
   @observable
-  String animation = "minion";
+  dynamic labelBorderColor = Colors.blue;
 
-  @action
-  bool darkMode(color) {
-    if(color == Colors.black ) return true;
-    return false;
-  }
+  @observable
+  String animation = "minion";
 
   @action
   updateThemeApp(bool value) {
@@ -48,11 +45,13 @@ abstract class ControllerBase with Store {
       secondColorApp = Colors.blue;
       textColor = Colors.black;
       animation = "minion";
+      labelBorderColor = Colors.blue;
     } else {
       primaryColorApp = Colors.black;
       secondColorApp = Colors.white;
       textColor = Colors.white;
       animation = "intro";
+      labelBorderColor = Colors.white;
     }
   }
 
