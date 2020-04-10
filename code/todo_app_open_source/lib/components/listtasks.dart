@@ -45,7 +45,7 @@ class _ListTasksState extends State<ListTasks> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text("Deseja excluir essa tarefa??"),
+            title: Text("Deseja excluir essa tarefa?"),
             content: Text(value),
             actions: <Widget>[
               FlatButton(
