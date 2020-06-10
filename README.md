@@ -2,6 +2,30 @@
 
 > O aplicativo para que você possa organizar suas tarefas, com o código fonte aberto para qualquer desenvolvedor contribuir e aprender com o projeto!
 
+<a href="https://github.com/joaovictorpsantos">
+<img alt="Autor" src="https://img.shields.io/badge/autor-JoãoVictorPereiraSantos-1E88E5?style=flat-square">
+</a>
+
+<a href="#">
+<img alt="Linguagens" src="https://img.shields.io/github/languages/count/joaovictorpsantos/todo_app_open_source?color=1E88E5&style=flat-square">
+</a>
+
+<a href="https://github.com/joaovictorpsantos/todo_app_open_source/stargazers">
+<img alt="Stars" src="https://img.shields.io/github/stars/joaovictorpsantos/todo_app_open_source?color=1E88E5&style=flat-square">
+</a>
+
+<a href="https://github.com/joaovictorpsantos/todo_app_open_source/network/members">
+<img alt="Forks" src="https://img.shields.io/github/forks/joaovictorpsantos/todo_app_open_source?color=1E88E5&style=flat-square">
+</a>
+
+<a href="#">
+<img alt="Tamanho do código em bytes" src="https://img.shields.io/github/languages/code-size/joaovictorpsantos/todo_app_open_source?color=1E88E5&style=flat-square">
+</a>
+
+<a href="https://github.com/joaovictorpsantos/todo_app_open_source/commits/master">
+<img alt="Commits" src="https://img.shields.io/github/last-commit/joaovictorpsantos/todo_app_open_source?color=1E88E5&style=flat-square">
+</a>
+
 [![Play Store Button](screenshots/1.0.0/google-play-icon.jpg "Google Play Button")](https://play.google.com/store/apps/details?id=com.santos.pereira.victor.joao.todo_app_open_source)
 
 ## Screenshots
