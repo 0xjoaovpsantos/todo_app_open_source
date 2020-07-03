@@ -31,6 +31,9 @@ abstract class ControllerBase with Store {
   dynamic textColor = Colors.black;
 
   @observable
+  dynamic labelBorderColor = Colors.blue;
+
+  @observable
   String animation = "minion";
 
   @action
@@ -42,11 +45,13 @@ abstract class ControllerBase with Store {
       secondColorApp = Colors.blue;
       textColor = Colors.black;
       animation = "minion";
+      labelBorderColor = Colors.blue;
     } else {
       primaryColorApp = Colors.black;
       secondColorApp = Colors.white;
       textColor = Colors.white;
       animation = "intro";
+      labelBorderColor = Colors.white;
     }
   }
 
@@ -101,4 +106,5 @@ abstract class ControllerBase with Store {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setStringList("myTasks", myTasks);
   }
+
 }

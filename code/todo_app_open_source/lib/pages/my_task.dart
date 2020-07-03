@@ -69,14 +69,17 @@ class _MyTaskState extends State<MyTask> {
                         maxLines: null,
                         keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
-                            hintText: "Escreve ai sem pressa!",
+                            labelText: "Escreve aí sem pressa!!",
+                            labelStyle: TextStyle(
+                              color: controller.labelBorderColor
+                            ),
                             hintStyle: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.bold),
                             enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
+                                borderSide: BorderSide(color: controller.labelBorderColor)),
                             focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white))),
+                                borderSide: BorderSide(color: controller.labelBorderColor))),
                       ),
                     ),
                     Container(
